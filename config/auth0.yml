@@ -3,3 +3,7 @@ development:
   auth0_domain: dev-vxacqm3bh5rcbkkr.us.auth0.com
   auth0_client_id: 13Ap8NWWGf323NpUlQNN12epazXPAkUO
   auth0_client_secret: <%= ENV["AUTH0_CLIENT_SECRET"] %>
+production:
+  auth0_domain: dev-vxacqm3bh5rcbkkr.us.auth0.com
+  auth0_client_id: 13Ap8NWWGf323NpUlQNN12epazXPAkUO
+  auth0_client_secret: <%= ENV["AUTH0_CLIENT_SECRET"] %>
