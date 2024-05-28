@@ -1,0 +1,12 @@
+<div class="container mx-auto p-6">
+    <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6 mb-8">
+        <h1 class="text-3xl font-bold mb-4"><%= @article.title %></h1>
+        <p class="text-gray-700 mb-6"><%= @article.body %></p>
+        <div class="flex space-x-4">
+            <%= link_to "Edit", edit_article_path(@article), class: "bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-700" %>
+            <%= link_to "Destroy", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-700" %>
+        </div>
+    </div>
+    <%= render @article.comments %>
+    <%= render "comments/form" %>
+</div>
