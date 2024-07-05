@@ -8,11 +8,6 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @user = session[:userinfo]
-    begin
-      1/0
-    rescue ZeroDivisionError => exception
-      Sentry.capture_exception(exception)
-    end
   end
 
   def new
