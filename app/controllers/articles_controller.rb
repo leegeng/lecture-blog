@@ -7,6 +7,18 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+
+    # openai integration
+    content = "#{@article.body}\n위 글을 요약해주세요."
+    client = OpenAI::Client.new
+    response = client.chat(
+    parameters: {
+        model: "gpt-4o", # Required.
+        messages: [{ role: "user", content:}], # Required.
+        temperature: 0.7,
+    })
+    @openai_response = response.dig("choices", 0, "message", "content")
+
     @user = session[:userinfo]
   end
 

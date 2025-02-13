@@ -7,6 +7,9 @@
             <%= link_to "Destroy", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-700" %>
         </div>
     </div>
+    <p>
+      <%= @openai_response %>
+    </p>
     <%= render @article.comments %>
     <%= render "comments/form" %>
 </div>
